@@ -7,4 +7,18 @@ async function getProducts(req, res) {
   res.send("Products: " + products.map((product) => product.name).join(", "))
 }
 
-module.exports = { getProducts }
+async function getProduct(req, res) {
+  let productID = req.params.id
+  //console.log(productID)
+  const product = await db.getProduct(productID)
+
+  console.log(`Product:`, product[0])
+  res.send("Product: " + product[0].name)
+}
+async function getCategory(req, res) {
+  let categoryID = req.params.id
+  const category = await db.getProductsForCategory(categoryID)
+
+  res.send("Category: " + category.map((product) => product.name).join(", "))
+}
+module.exports = { getProducts, getProduct, getCategory }
