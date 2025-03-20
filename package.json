@@ -1,0 +1,27 @@
+{
+  "name": "project_inventory_application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreaamasio/Project_Inventory_Application.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/andreaamasio/Project_Inventory_Application/issues"
+  },
+  "homepage": "https://github.com/andreaamasio/Project_Inventory_Application#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-validator": "^7.2.1",
+    "pg": "^8.14.1"
+  }
+}
