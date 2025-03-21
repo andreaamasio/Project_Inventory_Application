@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=locals.title%></title>
+  </head>
+  <body>
+    <h1><%=locals.title%></h1>
+    <%- include("./partials/errors.ejs") %>
+    <form action="/new_product" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" required />
+      <label for="categoryid">CategoryID:</label>
+      <input type="text" name="categoryid" id="categoryid" required />
+      <label for="producerid">ProducerID:</label>
+      <input type="text" name="producerid" id="producerid" required />
+      <label for="price">Price:</label>
+      <input type="text" name="price" id="price" required />
+      <label for="quantity">Quantity:</label>
+      <input type="text" name="quantity" id="quantity" required />
+      <label for="best_before_date">Best Before Date:</label>
+      <input
+        type="date"
+        name="best_before_date"
+        id="best_before_date"
+        required
+      />
+      <label for="image_url">Image URL:</label>
+      <input type="text" name="image_url" id="image_url" />
+      <label for="admin_password">Admin Password:</label>
+      <input type="text" name="admin_password" id="admin_password" />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

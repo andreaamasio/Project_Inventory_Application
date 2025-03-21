@@ -3,9 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
     <title>Bio Store</title>
   </head>
   <body>
-    <h1>Welcome to the store</h1>
+    <h1>Welcome to the bio store</h1>
+    <div class="products-container">
+      <% products.forEach((product, index) => { %>
+      <div class="product">
+        <div class="product_name"><%= product.name %></div>
+        <div class="category">Category: <%= product.categoryid %></div>
+        <div class="producer">Producer: <%= product.producerid %></div>
+        <div class="price">Price: €<%= product.price %></div>
+        <div class="quantity">Stock: <%= product.quantity %></div>
+        <div class="best_before_date">
+          Best Before: <%= product.best_before_date %>
+        </div>
+        <img
+          src="<%= product.image_url %>"
+          alt="Picture of <%= product.name %>"
+        />
+        <div><a href="product/<%= index %>">View Product</a></div>
+      </div>
+      <% }) %>
+    </div>
+
+    <a href="/new_product">Post New Product</a>
   </body>
 </html>
