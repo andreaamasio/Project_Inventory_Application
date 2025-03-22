@@ -61,7 +61,6 @@ async function getCategory(req, res) {
   let categoryID = req.params.id
   const category = await db.getProductsForCategory(categoryID)
   res.render("category", { products: category })
-  //res.send("Category: " + category.map((product) => product.name).join(", "))
 }
 async function getNewProduct(req, res) {
   res.render("newProductForm", {
