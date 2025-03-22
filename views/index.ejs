@@ -18,7 +18,8 @@
         <div class="price">Price: €<%= product.price %></div>
         <div class="quantity">Stock: <%= product.quantity %></div>
         <div class="best_before_date">
-          Best Before: <%= product.best_before_date %>
+          Best Before: <%= product.best_before_date.toLocaleDateString("en-GB")
+          %>
         </div>
         <img
           src="<%= product.image_url %>"

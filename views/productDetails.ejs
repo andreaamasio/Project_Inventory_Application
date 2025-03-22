@@ -16,12 +16,13 @@
         <div class="price">Price: €<%= product.price %></div>
         <div class="quantity">Stock: <%= product.quantity %></div>
         <div class="best_before_date">
-          Best Before: <%= product.best_before_date %>
+          Best Before: <%= product.best_before_date.toLocaleDateString("en-GB") %>
         </div>
-        <img
+        <!-- <img
           src="<%= product.image_url %>"
           alt="Picture of <%= product.name %>"
-        />         
+        />    -->
+        <img src="<%= product.image_url.startsWith('/') ? product.image_url : '/' + product.image_url %>" alt="<%= product.name %>" />      
     </div>
 
     <a href="/">Go back to Homepage</a>
