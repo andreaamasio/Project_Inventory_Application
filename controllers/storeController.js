@@ -52,7 +52,6 @@ async function getProduct(req, res) {
   //console.log(productID)
   const product = await db.getProduct(productID)
 
-  console.log(`Product:`, product[0])
   if (product[0] === undefined) {
     res.render("productNotFound")
   }

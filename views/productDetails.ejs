@@ -7,7 +7,8 @@
     <title><%= locals.product.name %> </title>
   </head>
   <body>
-    <h1>locals.product.name</h1>
+    <%- include("./partials/_navbar.ejs") %>
+    <h1><%= product.name %></h1>
     <div class="products-container">      
       <div class="product">
         <div class="product_name"><%= product.name %></div>
