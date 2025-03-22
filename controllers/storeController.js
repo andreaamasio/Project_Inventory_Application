@@ -51,7 +51,7 @@ async function getProduct(req, res) {
   let productID = Number(req.params.id) + 1
   //console.log(productID)
   const product = await db.getProduct(productID)
-
+  console.log(product)
   if (product[0] === undefined) {
     res.render("productNotFound")
   }

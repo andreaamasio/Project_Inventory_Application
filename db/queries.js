@@ -17,7 +17,7 @@ async function getProduct(id) {
 }
 async function getProductsForCategory(id) {
   const { rows } = await pool.query(
-    "SELECT * FROM products WHERE categoryid = $1",
+    "SELECT p.id, p.name, c.name AS categoryid, pr.name AS producerid, p.price, p.quantity, p.best_before_date, p.image_url FROM products p LEFT JOIN categories c ON p.categoryid = c.id LEFT JOIN producers pr ON p.producerid = pr.id WHERE categoryid = $1",
     [id]
   )
   return rows
