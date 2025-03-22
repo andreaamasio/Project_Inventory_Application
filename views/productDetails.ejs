@@ -4,13 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles.css" />
-    <title>Bio Store</title>
+    <title><%= locals.product.name %> </title>
   </head>
   <body>
-    <h1>Welcome to the bio store</h1>
-
-    <div class="products-container">
-      <% locals.products.forEach((product, index) => { %>
+    <h1>locals.product.name</h1>
+    <div class="products-container">      
       <div class="product">
         <div class="product_name"><%= product.name %></div>
         <div class="category">Category: <%= product.categoryid %></div>
@@ -23,12 +21,9 @@
         <img
           src="<%= product.image_url %>"
           alt="Picture of <%= product.name %>"
-        />
-        <div><a href="product/<%= index %>">View Product</a></div>
-      </div>
-      <% }) %>
+        />         
     </div>
 
-    <a href="/new_product">Post New Product</a>
+    <a href="/">Go back to Homepage</a>
   </body>
 </html>
